@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lora", serif;
+}
+
+body {
+    background-image: url('../imgs/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+:root {
+    --primary-color: purple;
+    --myPinkColor: rgba(255, 230, 234, 0.897);
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.whiteSpace {
+    padding: 4vh 5vw !important;
+}
+
+nav {
+    background-color: var(--primary-color);
+
+    .btn:hover {
+        background-color: rgba(255, 255, 255, 0.377) !important;
+        font-weight: bold;
+    }
+}
+
+/*--------------------------Add Section-----------------------*/
+.add-section {
+    #addForm .filters-card {
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #addForm:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--card-shadow);
+    }
+
+    .my-submit {
+        border: 3px solid var(--primary-color);
+        background-color: var(--myPinkColor);
+    }
+
+    .my-submit:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .input-group-text {
+        background-color: var(--myPinkColor) !important;
+    }
+
+    .form-control,
+    .form-select {
+        border: 2px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px var(--myPinkColor);
+    }
+}
+
+
+/*--------------------------Table Section-----------------------*/
+table {
+    box-shadow: var(--card-shadow);
+
+    thead {
+        background-color: var(--primary-color);
+
+        th {
+            color: white;
+        }
+    }
+
+    th,
+    td {
+        border-bottom: 2px solid var(--myPinkColor);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        padding: 1rem;
+    }
+
+    tbody {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        tbody td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        button{
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: rgb(221, 3, 3);
+        }
+
+        .btn-edit {
+            background-color: green !important;
+        }
+    }
+
+    form {
+        display: none;
+    }
+}
+
+
+/*--------------------------Edit Window-----------------------*/
+[id^="editWindow"] {
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+    #editModal {
+        border: 5px solid var(--primary-color);
+        width: 450px;
+        max-width: 450px;
+
+        .head-edit {
+            background-color: var(--primary-color);
+            height: 50px;
+            padding: 0px 30px;
+
+            .fa-x {
+                font-size: 20px;
+            }
+        }
+
+        form {
+            padding: 30px;
+
+            .form-label {
+                margin: 0px;
+            }
+
+            .form-control,
+            .form-select {
+                margin-bottom: 15px;
+            }
+
+            .changes-btn {
+                border: 3px solid var(--primary-color);
+                background-color: var(--myPinkColor);
+            }
+
+            .changes-btn:hover {
+                background-color: var(--primary-color);
+                color: white;
+            }
+        }
+    }
+}
+
+/*--------------------------Gallery Page-----------------------*/
+
+/* Product Cards */
+.product-card {
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+
+    .card-img {
+        height: 46vh;
+    }
+
+    img {
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .price {
+        color: var(--primary-color);
+    }
+}
+
+.category {
+    width: fit-content;
+    background: var(--myPinkColor);
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/*---------------------------Slider Section---------------------*/
+
+.slider-wrapper {
+    margin: 0 60px;
+}
+
+.slider {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 20px;
+}
+
+.slider-card {
+    min-width: 32%;
+    transition: transform 0.3s ease;
+}
+
+.slider-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slider-card .price {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+/*-----------------Slider Controls------------------*/
+.slider-btn {
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--primary-color) !important;
+    color: var(--myPinkColor);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 1px;
+}
+
+.next-btn {
+    right: 1px;
+}
+
+@media screen and (max-width:992px) {
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-wrapper table {
+        width: 100%;
+        min-width: 700px;
+        border-collapse: collapse;
+    }
+
+    .table-wrapper th,
+    .table-wrapper td {
+        white-space: nowrap;
+        padding: 0.75rem;
+        text-align: left;
+    }
+
+    #editModal {
+        max-width: 275px !important;
+        font-size: 0.75rem;
+        
+        .btn{
+        font-size: 0.75rem;
+        width: 110px;
+        }
+    }
+
+    .slider-card {
+        min-width: 100%;
+    }
+
+    .slider-btn {
+    width: 25px;
+    height: 25px;
+}
+}
