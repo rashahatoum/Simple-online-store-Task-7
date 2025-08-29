@@ -144,32 +144,6 @@ const deleteProduct = (id) => {
 }
 
 //Gallery Functions
-function showCards(productsToShow = products) {
-    if (!cardContainer) return;
-    cardContainer.innerHTML = "";
-    if (productsToShow.length === 0) {
-        cardContainer.innerHTML =
-            '<div class="col-12 text-center"><p class="text-muted">No products found.</p></div>';
-        return;
-    }
-    productsToShow.forEach((product) => {
-        cardContainer.innerHTML += `
-        <div class="col-md-6 col-lg-4 mb-3">
-                <div class="product-card p-0 bg-white rounded-4 overflow-hidden h-100 d-flex flex-column">
-                    <div class="card-img overflow-hidden">
-                        <img src="${product.image}" alt="${product.name}" class="w-100 h-100">
-                    </div>
-                    <div class="card-body p-4 d-flex flex-column flex-grow-1">
-                        <h5 class="fw-bolder mb-2 fs-6">${product.name}</h5>
-                        <div class="price fw-bolder fs-3">$${product.price}</div>
-                        <span class="category rounded-5 text-dark display-inline-block mt-2">${product.category}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-}
-showCards();
 
 //filter Functions
 
@@ -178,7 +152,7 @@ let currentSlideIndex = 0;
 function showCardsWithFilters() {
     if (!cardContainer) return;
     if (!nameFilter || !categoryFilter || !priceSort) {
-        showCards();
+        updateSlider();
         return;
     }
 
@@ -213,8 +187,6 @@ function showCardsWithFilters() {
         });
     }
     filteredProducts = tempProducts;
-
-    showCards(filteredProducts);
     updateSlider();
 }
 
@@ -254,9 +226,9 @@ function updateSlider() {
             </div>
         `;
     });
-
     updateSliderPosition();
 }
+updateSlider()
 
 function slideLeft() {
     if (currentSlideIndex > 0) {

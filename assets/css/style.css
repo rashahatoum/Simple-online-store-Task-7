@@ -169,38 +169,7 @@ table {
     }
 }
 
-/*--------------------------Gallery Page-----------------------*/
-
-/* Product Cards */
-.product-card {
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
-
-    .card-img {
-        height: 46vh;
-    }
-
-    img {
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .price {
-        color: var(--primary-color);
-    }
-}
-
-.category {
-    width: fit-content;
-    background: var(--myPinkColor);
-    padding: 0.25rem 0.75rem;
-    font-size: 1rem;
-}
-
-.product-card:hover img {
-    transform: scale(1.05);
-}
-
+/*Gallery Page*/
 /*---------------------------Slider Section---------------------*/
 
 .slider-wrapper {
@@ -219,13 +188,20 @@ table {
 
 .slider-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 250px;
+    object-fit: fill;
 }
 
 .slider-card .price {
     font-size: 1.25rem;
     color: var(--primary-color);
+}
+
+.category {
+    width: fit-content;
+    background: var(--myPinkColor);
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
 }
 
 /*-----------------Slider Controls------------------*/
@@ -282,6 +258,10 @@ table {
         font-size: 0.75rem;
         width: 110px;
         }
+    }
+    
+    .slider-wrapper {
+    margin: 0 30px;
     }
 
     .slider-card {
